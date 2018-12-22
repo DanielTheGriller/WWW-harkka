@@ -1,0 +1,10 @@
+// This pug contains the background as SVG
+div(style='width:100vw;height:93vh;position:absolute;z-index:-1;')
+  // Got help from https://www.w3schools.com/graphics/ svg tutorials
+  svg(height='100%', width='100%', viewBox='0 0 100 100', preserveAspectRatio='none')
+    polygon(points='100,100 45,100 75,0 100,0', style='fill:rgb(80,255,80)')
+    polygon(points='0,51 58.5,51 43.8,100 0,100', style='fill:rgb(255,80,80)')
+    polygon(points='74,0 0,0 0,49 59,49 ', style='fill:rgb(80,80,255)')
+    line(x1='0', y1='50', x2='59', y2='50', style='stroke:rgb(255,255,255);stroke-width:0.25vw')
+    line(x1='75', y1='-0.5', x2='44', y2='100', style='stroke:rgb(255,255,255);stroke-width:0.3vh')
+    line(x1='0', y1='98', x2='100', y2='98', style='stroke:rgb(255,255,255);stroke-width:0.5vw')

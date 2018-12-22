@@ -1,0 +1,21 @@
+// Navigation bar used in all views
+nav.teal.accent-2
+  // Using materializecss container
+  .nav-wrapper.container
+    // Logo at the center of navbar
+    a.brand-logo.center(href='/')
+      img(src='/images/logo.png')
+    // Main navigation, left of the logo
+    ul
+      li
+        a.black-text(href='/') Home
+      li
+        a.black-text(href='games') Games
+      li
+        a.black-text(href='memes') Pictures
+    // Login, registration and help links, right of the logo
+    ul.right.valign-wrapper
+      li
+        a(href='help')
+          i.material-icons.black-text help
+// Navigation bar ends here

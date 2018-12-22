@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    // Google Icon Font import
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Materialize css import
+    link(rel='stylesheet', href='stylesheets/materialize.css')
+    title TIME-KILLER
+  body(bgcolor='5050ff')
+    include nav.pug
+    .container.center.flow-text
+      h1 Add pictures
+      br
+
+      .teal.accent-2.row
+        // Create a form for uploading files
+        form.col.s12(action='/upload' method="POST" enctype="multipart/form-data")
+          .row
+            // Display texts on success and errors NOTE: for some reason it does not work.
+            .col.s12.black-text
+              if msg==1
+                .card.green.accent-4
+                  p Picture uploaded succesfully!
+              else if msg==2
+                .card.red.accent-4
+                  p File too large!
+              else if msg==3
+                .card.red.accent-4
+                  p Invalid file type. Please use JPG, PNG or GIF
+              else
+                p Choose a picture to upload
+          // Actual input fields
+          .row
+            .col.s12
+              // Field for picture
+              input(type='file' name='meme' required)
+          .white
+            .row
+              .input-field.col.s10.push-s1
+                // Field for file name
+                input.validate(placeholder='Picture name' type='text' name="pname" required)
+            .row
+              .input-field.col.s10.push-s1
+                // Optional field for Description
+                input.validate(placeholder='Description' type='text' name="description")
+          .row
+            .col.s4.push-s4
+              // Button which starts the upload
+              button.btn.waves-effect.waves-light(type='submit', name='action')
+                | Upload

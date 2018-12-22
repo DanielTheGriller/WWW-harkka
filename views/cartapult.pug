@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    // Google Icon Font import
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Materialize css import
+    link(type='text/css', rel='stylesheet', href='stylesheets/materialize.css', media='screen,projection')
+    title TIME-KILLER
+  body(bgcolor='ffffff')
+    include nav.pug
+    div
+      br
+      h1.flow-text.center Cartapult
+      // Import game from www.miniclip.com
+      // Links to miniclip.com
+      p(style='text-align:center;')
+        a(href='https://www.miniclip.com/games/cartapult/', target='_blank') Play Cartapult
+        |  -
+        a(href='https://www.miniclip.com/games/genre-1143/', target='_blank') More Destruction games
+        |  -
+        a(href='https://www.miniclip.com/terms', target='_blank') Terms and Conditions
+        |  -
+        a(href='https://www.miniclip.com/privacy', target='_blank') Privacy Policy
+      // iFrame of the actual game
+      .center
+        iframe.center(src='https://www.miniclip.com/games/cartapult/en/webgame.php', width='960', height='640', scrolling='no')
+

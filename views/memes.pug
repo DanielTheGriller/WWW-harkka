@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    // Google Icon Font import
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Materialize css import
+    link(rel='stylesheet', href='stylesheets/materialize.css')
+    title TIME-KILLER
+  body(bgcolor='5050ff')
+    include nav.pug
+    include backgrounds/memesbg.pug
+    
+    // Actual content starts from here
+    // Container keeps the content in 70% of the width
+    .container.center.flow-text
+      // Set flow-text for scaling text size
+      .z-depth-5.teal.accent-2
+        h1.col.s4.push-s4 Pictures 
+          br
+          // Button link for adding new pictures
+          a.btn-large.valign-wrapper.col.s3.push-s4(href='/add')
+            | Add new
+        .row        
+          // If memelist has objects, loop through to display them on the page 
+          if memelist.length
+            each meme in memelist
+              .col.s12
+                // Display order in page: name > image > description, and add a divider after picture
+                h4 #{meme['pname']}
+                |<div><img src=#{meme['path']} alt='image' width='800vw'/></div>
+                p #{meme['description']}
+                .divider
+          // If no memes on the list, display caption
+            else
+              .row
+                .col.s12
+                  No memes uploaded yet.
+
+    // Content ends in here
+

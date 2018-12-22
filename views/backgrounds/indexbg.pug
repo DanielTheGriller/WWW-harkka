@@ -1,0 +1,24 @@
+// Set canvas size, best suited to fit a 16:9 screen
+div(style='width:100vw;height:85vh;')
+  // Got help from https://www.w3schools.com/graphics/ svg tutorials
+  svg(height='100%', width='100%', viewBox='0 0 100 100', preserveAspectRatio='none')
+    // Setting up styles for SVG text
+    style.
+      .blue { font: bold 12px sans-serif ; fill: rgb(80,80,255); }
+      .red { font: bold 12px sans-serif ; fill: rgb(255,80,80); }
+      .green { font: bold 12px sans-serif ; fill: rgb(80,255,80); }
+    // Draw three polygons and make "memes" and "games" polygons as links
+    // Classes hovergreen, hoverred and hoverblue changes text color on hover
+    // Red one with AND
+    a.hovergreen(href='and')
+      polygon(points='100,100 45,100 75,0 100,0', style='fill:rgb(255,80,80)')
+      text.blue(x='67', y='55') AND
+    // Blue one with MEMES
+    a.hoverred(href='memes')
+      polygon(points='0,50 60,50 45,100 0,100', style='fill:rgb(80,80,255)')
+      text.green(x='3', y='77') MEMES
+    // Green one with GAMES
+    a.hoverblue(href='games')
+      polygon(points='75,0 0,0 0,50 60,50 ', style='fill:rgb(80,255,80)')
+      text.red.hoverblue(x='9', y='27') GAMES
+// SVG graphic ends here

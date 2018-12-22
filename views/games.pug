@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    // Google Icon Font import
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // Materialize css import
+    link(type='text/css', rel='stylesheet', href='stylesheets/materialize.css', media='screen,projection')
+    // Vue.js import
+    script(src='https://cdn.jsdelivr.net/npm/vue')
+    title TIME-KILLER
+  body(bgcolor='50ff50')
+    // Include navbar and background SVG
+    include nav.pug
+    include backgrounds/gamesbg.pug
+
+    // Actual content starts from here
+    // Container keeps the content in 70% of the width
+    .container.center.z-depth-5.teal.accent-2
+      // Set flow-text for scaling text size
+      .flow-text
+        h1 Games
+        p Provided by Miniclip
+      // This is part creates the content with Vue
+      // Set class row for a beautiful CSS grid
+      #gameList.row
+        // Set properties in class so the grid is scaling for different screen sizes
+        .col.s12.m6.l4(v-for='game in games')
+          // This is the part which is loaded by v-for
+          a.black-text.flow-text.hoverclick(v-bind:href="''+game.link+''")
+            img(v-bind:src="'https://static3.miniclipcdn.com/images/big-images/' + game.image + '_444x287.jpg'", width='300vw', height='auto')
+            br
+            | {{ game.name }}
+            br
+            br
+          // v-for content ends here
+        h5.hide-on-large-only
+          | Please notice, that these games might not be playable with mobile devices or tablets.
+        h1
+    // Content ends in here
+    // Import Vue script
+    script(src='javascripts/vue.js')
+
